@@ -77,10 +77,14 @@ scraping-shield/
 ├── 15-fake-data/
 │   ├── README.md / README_RU.md
 │   └── middleware.js
-└── 16-json-obfuscation/
+├── 16-json-obfuscation/
+│   ├── README.md / README_RU.md
+│   ├── server.js
+│   └── client.js
+└── 17-request-timing/
     ├── README.md / README_RU.md
-    ├── server.js
-    └── client.js
+    ├── analyzer.go
+    └── middleware.go
 ```
 
 ---
@@ -105,6 +109,7 @@ scraping-shield/
 | 14 | 🔒 TLS Fingerprinting | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | [14-tls-fingerprinting](./14-tls-fingerprinting/) |
 | 15 | 🎭 Fake Data for Bots | ⭐⭐⭐☆☆ | ⭐⭐⭐☆☆ | [15-fake-data](./15-fake-data/) |
 | 16 | 🔀 JSON Key Obfuscation | ⭐⭐⭐☆☆ | ⭐⭐☆☆☆ | [16-json-obfuscation](./16-json-obfuscation/) |
+| 17 | ⏰ Request Timing Analysis | ⭐⭐⭐☆☆ | ⭐⭐⭐⭐☆ | [17-request-timing](./17-request-timing/) |
 
 ---
 
@@ -124,6 +129,7 @@ scraping-shield/
 - [12-bot-fingerprinting](./12-bot-fingerprinting/) — Detect headless browsers
 - [13-datacenter-ip-block](./13-datacenter-ip-block/) — Block AWS/GCP/DO
 - [04-captcha](./04-captcha/) — Cloudflare Turnstile
+- [17-request-timing](./17-request-timing/) — Behavioral timing analysis (Go)
 
 **Stage 4 — Maximum protection**
 - [14-tls-fingerprinting](./14-tls-fingerprinting/) — JA3/JA4 detection
