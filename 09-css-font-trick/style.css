@@ -1,0 +1,13 @@
+/* Apply obfuscated font to sensitive data only */
+@font-face {
+  font-family: 'ObfuscatedFont';
+  src: url('/fonts/obfuscated.woff2') format('woff2');
+  font-display: swap;
+}
+
+.price,
+.phone-number,
+.product-count {
+  font-family: 'ObfuscatedFont', sans-serif;
+  /* User sees correct digits, scraper reads scrambled ones */
+}
