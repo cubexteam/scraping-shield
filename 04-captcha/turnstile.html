@@ -1,0 +1,33 @@
+<!-- Cloudflare Turnstile — free, often invisible to real users -->
+<!-- Get your sitekey at: https://dash.cloudflare.com → Turnstile -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+  <form id="contact-form">
+    <input type="text" name="email" placeholder="Email">
+
+    <!-- Turnstile widget -->
+    <div class="cf-turnstile" data-sitekey="YOUR_SITE_KEY"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const token = document.querySelector('[name=cf-turnstile-response]').value
+      const res = await fetch('/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, email: e.target.email.value })
+      })
+      const data = await res.json()
+      console.log(data)
+    })
+  </script>
+</body>
+</html>
